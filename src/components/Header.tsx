@@ -6,6 +6,7 @@ import type { SearchFilter } from "../types";
 
 export default function Header() {
 
+
     const [searchFilters, setSearchFilters] = useState<SearchFilter>({
         ingredient: '',
         category: ''
@@ -65,6 +66,11 @@ export default function Header() {
                                 isActive ? "text-orange-500 uppercase font-bold" : "text-white uppercase font-bold"
                             }
                             to="/favoritos">Favoritos</NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                isActive ? "text-orange-500 uppercase font-bold" : "text-white uppercase font-bold"
+                            }
+                            to="/generar-ia">Generar con IA</NavLink>
                     </nav>
                 </div>
 
