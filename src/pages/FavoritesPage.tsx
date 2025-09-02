@@ -1,21 +1,21 @@
 import { useMemo } from "react"
-import { useAppStore } from "../stores/useAppStore"
 import DrinkCard from "../components/DrinkCard"
+import { useAppStore } from "../stores/useAppStore"
 
 
 
-export default function IndexView() {
+export default function FavoritesPage() {
 
-    const drinks = useAppStore((state) => state.drinks)
-    const hasDrinks = useMemo(() => drinks.drinks.length, [drinks])
+    const favorites = useAppStore((state) => state.favorites)
+    const hasFavorites = useMemo(() => favorites.length, [favorites])
 
     return (
         <>
-            <h1 className="text-6xl font-extrabold">Recetas</h1>
+            <h1 className="text-6xl font-extrabold">Favoritos</h1>
 
-            {hasDrinks ? (
+            {hasFavorites ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 my-10 gap-10">
-                    {drinks.drinks.map((drink) => (
+                    {favorites.map(drink => (
                         <DrinkCard
                             key={drink.idDrink}
                             drink={drink}
@@ -24,10 +24,9 @@ export default function IndexView() {
                 </div>
             ) : (
                 <p className="my-10 text-center text-2xl">
-                    No hay resultados aún, utiliza el formulario para buscar recetas.
+                    Los favoritos se mostrarán aquí
                 </p>
             )}
         </>
     )
-
 }

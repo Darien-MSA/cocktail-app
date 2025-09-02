@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import { lazy, Suspense } from "react";
 
-const FavoritesView = lazy(() => import('./views/FavoritesView'))
-const IndexView = lazy(() => import('./views/IndexView'))
-const GenerateAI = lazy(() => import('./views/GenerateAI'))
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage'))
+const IndexPage = lazy(() => import('./pages/IndexPage'))
+const GenerateAI = lazy(() => import('./pages/GenerateAI'))
 
 
 export default function AppRouter() {
@@ -14,12 +14,12 @@ export default function AppRouter() {
                 <Route element={<Layout />}>
                     <Route path="/" element={
                         <Suspense fallback="Cargando...">
-                            <IndexView />
+                            <IndexPage />
                         </Suspense>
                     } index />
                     <Route path="/favoritos" element={
                         <Suspense fallback="Cargando...">
-                            <FavoritesView />
+                            <FavoritesPage />
                         </Suspense>
                     } />
                     <Route path="/generar-ia" element={

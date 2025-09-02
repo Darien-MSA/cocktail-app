@@ -5,7 +5,7 @@ export default function GenerateAI() {
 
     const showNotification = useAppStore((state) => state.showNotification)
     const generateRecipe = useAppStore((state) => state.generateRecipe)
-    const recipe = useAppStore((state) => state.recipe)
+    const recipeAI = useAppStore((state) => state.recipeAI)
     const isGenerating = useAppStore((state) => state.isGenerating)
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -51,11 +51,12 @@ export default function GenerateAI() {
                                     d="m15 11.25-3-3m0 0-3 3m3-3v7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                         </button>
+
                     </div>
                 </form>
                 {isGenerating && (<p className="animate-blink text-center">Generando...</p>)}
                 <div className="py-10 whitespace-pre-wrap">
-                    {recipe}
+                    {recipeAI}
                 </div>
             </div>
 
