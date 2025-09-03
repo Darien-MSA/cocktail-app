@@ -20,3 +20,7 @@ Buscador de recetas para bebidas. Incluye IA para generar recetas personalizadas
 - TailwindCSS
 - HeadlessUI
 - HeroIcons 
+
+## Demo
+
+https://cocktailapp-nane.netlify.app/
